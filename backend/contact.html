@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Kamikamikita</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>☕ KAMIKAMIKITA</h1>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section style="padding: 60px;">
+        <h2>Contact Us ☕</h2>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Name" required
+                style="display:block;margin:10px 0;padding:10px;width:300px;">
+
+            <input type="email" id="email" placeholder="Email" required
+                style="display:block;margin:10px 0;padding:10px;width:300px;">
+
+            <textarea id="message" placeholder="Message" required
+                style="display:block;margin:10px 0;padding:10px;width:300px;height:120px;"></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            const res = await fetch("http://localhost:3000/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ name, email, message })
+            });
+
+            const data = await res.json();
+            alert(data.message);
+        });
+    </script>
+
+</body>
+
+</html>

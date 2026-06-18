@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAMIKAMIKITA Coffee Shop</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <h1>☕ KAMIKAMIKITA</h1>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button class="btn" onclick="toggleDarkMode()">Dark Mode</button>
+
+        </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>Crafted with Passion,<br>Brewed for You.</h2>
+
+            <p>
+                Premium coffee experience with selected beans and cozy atmosphere.
+            </p>
+
+            <input type="text" id="searchBox" placeholder="Search coffee..." onkeyup="searchCoffee()">
+
+            <br><br>
+
+            <a href="products.html" class="btn">Explore Menu</a>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="images/coffee.JPG" class="hero-img" alt="Coffee Image">
+        </div>
+
+    </section>
+
+    <!-- ================= JS ================= -->
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
